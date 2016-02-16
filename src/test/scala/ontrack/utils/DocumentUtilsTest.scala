@@ -1,6 +1,5 @@
-package utils
+package ontrack.utils
 
-import ontrack.utils.DocumentUtils
 import org.scalatest.{Matchers, WordSpec}
 
 class DocumentUtilsTest extends WordSpec with Matchers{

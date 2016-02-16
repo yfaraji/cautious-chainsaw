@@ -21,7 +21,6 @@ class DocumentUtils {
       case x if x.isEmpty => 0
       case x if x.filter(y => listOfSentenceEndings.contains(y)).isEmpty => 1
       case _ => line.split(listOfSentenceEndings).length
-
     }
 
 
