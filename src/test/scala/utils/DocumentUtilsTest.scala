@@ -29,4 +29,31 @@ class DocumentUtilsTest extends WordSpec with Matchers{
     }
   }
 
+  "A word counter" should {
+    "Return the correct word count" in {
+      val dUtils = new DocumentUtils
+
+      val x = "The quick brown fox jumps over the lazy dog"
+      val count = 9
+      dUtils.wordCount(x) should be(count)
+    }
+
+    "Return the correct word count on empty string" in {
+      val dUtils = new DocumentUtils
+
+      val x = ""
+      val count = 0
+      dUtils.wordCount(x) should be(count)
+    }
+
+    "Return the correct word count on 1 word string" in {
+      val dUtils = new DocumentUtils
+
+      val x = "isthisoneword"
+      val count = 1
+      dUtils.wordCount(x) should be(count)
+    }
+
+
+  }
 }
