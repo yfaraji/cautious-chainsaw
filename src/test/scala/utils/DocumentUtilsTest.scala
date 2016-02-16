@@ -53,7 +53,39 @@ class DocumentUtilsTest extends WordSpec with Matchers{
       val count = 1
       dUtils.wordCount(x) should be(count)
     }
+  }
 
+  "Sentence counter" should {
+    "Return the correct sentence count" in {
+      val dUtils = new DocumentUtils
 
+      val x = "Cheeseburger! Are you a burrito? What a shame."
+      val count = 3
+      dUtils.sentenceCount(x) should be(count)
+    }
+
+    "Return the correct sentence count on empty sentence" in {
+      val dUtils = new DocumentUtils
+
+      val x = ""
+      val count = 0
+      dUtils.sentenceCount(x) should be(count)
+    }
+
+    "Return the correct sentence count on sentence that does not end in punctuation" in {
+      val dUtils = new DocumentUtils
+
+      val x = "is this a sentence without a question mark"
+      val count = 1
+      dUtils.sentenceCount(x) should be(count)
+    }
+
+    "Return the correct sentence count on sentence that does end in punctuation." in {
+      val dUtils = new DocumentUtils
+
+      val x = "is this a sentence without a question mark"
+      val count = 1
+      dUtils.sentenceCount(x) should be(count)
+    }
   }
 }
